@@ -7,7 +7,7 @@ This project uses the Google Gemini API to automatically generate dense, self-co
 The script performs the following steps for each specified project:
 
 1.  **Clones Repository:** Clones the target project's repository using `git clone --depth=1`.
-2.  **Extracts Documentation:** Uses the [`files-to-prompt`](https://github.com/mozilla/files-to-prompt) tool to extract text content from Markdown files found within the specified documentation path inside the cloned repository.
+2.  **Extracts Documentation:** Uses the `files-to-prompt` tool to extract text content from Markdown files found within the specified documentation path inside the cloned repository.
 3.  **Generates Cheatsheet:** Sends the extracted documentation text to the configured Google Gemini model via the API, along with a system prompt instructing it to create a dense, accurate, and self-contained Markdown cheatsheet.
 4.  **Saves Output:** Saves the generated cheatsheet as a Markdown file (`[project_name]_cheatsheet.md`) in the output directory.
 5.  **Cleans Up:** Removes the temporarily cloned repository.
@@ -21,9 +21,7 @@ Before running the script, ensure you have the following installed:
 3.  **Python 3 & Pip:** Required by the `files-to-prompt` tool.
 4.  **`files-to-prompt`:** The core documentation extraction tool. Install it globally:
     ```bash
-    npm install -g @mozilla/files-to-prompt
-    # or using pip directly if preferred
-    # pip3 install files-to-prompt
+    pip3 install files-to-prompt
     ```
 5.  **Google Gemini API Key:** You need an API key from Google AI Studio. ([Get an API Key](https://aistudio.google.com/app/apikey))
 
